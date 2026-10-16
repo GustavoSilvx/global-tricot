@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-paper font-sans text-ink antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display font-normal tracking-tight text-ink;
+  }
+  :focus-visible {
+    outline: 2px solid #b82182;
+    outline-offset: 2px;
+  }
+  img {
+    @apply max-w-full;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Ponto canelado do tricô: o único gesto decorativo do site. */
+  .rib {
+    background-color: #b82182;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.075) 0,
+      rgba(255, 255, 255, 0.075) 3px,
+      rgba(0, 0, 0, 0.07) 3px,
+      rgba(0, 0, 0, 0.07) 6px,
+      transparent 6px,
+      transparent 9px
+    );
+  }
+  .rib-soft {
+    background-color: #f8e6f1;
+    background-image: repeating-linear-gradient(
+      90deg,
+      rgba(184, 33, 130, 0.07) 0,
+      rgba(184, 33, 130, 0.07) 3px,
+      transparent 3px,
+      transparent 9px
+    );
+  }
+  .shell {
+    @apply mx-auto w-full max-w-shell px-4 sm:px-6 lg:px-8;
+  }
+}
